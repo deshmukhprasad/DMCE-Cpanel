@@ -17,20 +17,12 @@ SELECT * FROM students
 
 if(isset($_POST["search"]["value"]))
 {
-	// $query .= 'WHERE';
-	// $query .= '(name LIKE "%'.$_POST["search"]["value"].'%" ';
-	// $query .= 'OR division LIKE "%'.$_POST["search"]["value"].'%" ';
-	// $query .= 'OR cls LIKE "%'.$_POST["search"]["value"].'%") ';
 
 	$query .= "WHERE pid LIKE '%".$_POST['search']['value']."%' ";
 	$query .= "OR name LIKe '%".$_POST['search']['value']."%' ";
 	$query .= "OR cls LIKe '%".$_POST['search']['value']."%' ";
 	$query .= "OR division LIKe '%".$_POST['search']['value']."%' ";
-	// $query .= "OR bond LIKe '%".$_POST['search']['value']."%' ";
-	// $query .= "OR offer_date LIKe '%".$_POST['search']['value']."%' ";
-
-
-
+	
 }
 
 

@@ -16,11 +16,6 @@ $query .= "
 ";
 
 
-// if($_SESSION['type'] == 'user')
-// {
-// 	$query .= 'user_id = "'.$_SESSION["user_id"].'" AND ';
-// }
-
 if(isset($_POST["search"]["value"]))
 {
 

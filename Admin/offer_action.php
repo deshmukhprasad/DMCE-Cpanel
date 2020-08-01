@@ -208,66 +208,6 @@ function fill_student_list($connect)
 			}
 		}
 
-		// $conn->close();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		// $sql = "UPDATE offer SET 
-		// 		pid = '".$_POST["pid"]."',
-		// 		comp = '".$_POST["comp"]."',
-		// 		package = '".$_POST["package"]."',
-		// 		bond = '".$_POST["bond"]."',
-		// 		offer_date = '".$_POST["offer_date"]."'
-		// 	WHERE oid = '".$_POST["oid"]."'
-		//  ";
-
-
-		// $statement = $connect->prepare($sql);
-		// $statement->execute();
-			
-		// $result = $statement->fetchAll();
-		
-		// if(isset($result)) {
-		// 	echo 'Offer Edited ...';
-		// }
-		// else {
-		// 	echo 'Error updating Offer...';
-		// }
-
-		// $sql = "UPDATE students SET 
-		// 		name = '".$_POST["name"]."',
-		// 		cls = '".$_POST["cls"]."',
-		// 		division = '".$_POST["division"]."'
-		// 	WHERE pid = '".$_POST["pid"]."'
-		//  ";
-
-
-		// $statement = $connect->prepare($sql);
-		// $statement->execute();
-			
-		// $result = $statement->fetchAll();
-		
-		// if(isset($result)) {
-		// 	echo 'Student Edited ...';
-		// }
-		// else {
-		// 	echo 'Error updating Offer...';
-		// }
-
-
-
 	}
 
 

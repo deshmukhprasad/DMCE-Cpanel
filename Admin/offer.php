@@ -5,7 +5,7 @@ include('database_connection.php');
 
 include('function.php');
 
-if(!isset($_SESSION['type']))
+if(!isset($_SESSION['user_id']))
 {
 	header('location:login.php');
 }
@@ -93,12 +93,7 @@ foreach($result as $row)
 								<th>Package</th>
 								<th>Bond</th>
 								<th>Offer Date</th>
-								<!--<?php
-								// if($_SESSION['type'] == 'master')
-								// {
-									// echo '<th>Created By</th>';
-								// }
-								?> -->
+								
 
 								<th></th>
 								<th></th>
@@ -217,32 +212,34 @@ foreach($result as $row)
 				url:"offer_fetch.php",
 				type:"POST"
 			},
-			<?php
-			if($_SESSION["type"] == 'master')
-			{
-			?>
+			"pageLength": 10
+			});
+			// <?php
+			// if($_SESSION["type"] == 'master')
+			// {
+			// ?>
+			// // "columnDefs":[
+			// // 	{
+			// // 		"targets":[4, 5, 6, 7, 8, 9],
+			// // 		"orderable":false,
+			// // 	},
+			// // ],
+			// <?php
+			// }
+			// else
+			// {
+			// ?>
 			// "columnDefs":[
 			// 	{
-			// 		"targets":[4, 5, 6, 7, 8, 9],
+			// 		"targets":[4, 5, 6, 7, 8],
 			// 		"orderable":false,
 			// 	},
 			// ],
-			<?php
-			}
-			else
-			{
-			?>
-			"columnDefs":[
-				{
-					"targets":[4, 5, 6, 7, 8],
-					"orderable":false,
-				},
-			],
-			<?php
-			}
-			?>
-			"pageLength": 10
-		});
+			// <?php
+			// }
+			// ?>
+			
+		
 
     	// prompt is displayed which contains form
 		$('#add_button').click(function(){

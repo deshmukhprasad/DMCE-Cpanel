@@ -10,9 +10,9 @@ if(isset($_POST['user_name']))
 	{
 		$query = "
 		UPDATE user_details SET 
-			user_name = '".$_POST["user_name"]."', 
-			user_email = '".$_POST["user_email"]."', 
-			user_password = '".password_hash($_POST["user_new_password"], PASSWORD_DEFAULT)."' 
+			name = '".$_POST["user_name"]."', 
+			email = '".$_POST["user_email"]."', 
+			password = '".password_hash($_POST["user_new_password"], PASSWORD_DEFAULT)."' 
 			WHERE user_id = '".$_SESSION["user_id"]."'
 		";
 	}
@@ -20,8 +20,8 @@ if(isset($_POST['user_name']))
 	{
 		$query = "
 		UPDATE user_details SET 
-			user_name = '".$_POST["user_name"]."', 
-			user_email = '".$_POST["user_email"]."'
+			name = '".$_POST["user_name"]."', 
+			email = '".$_POST["user_email"]."'
 			WHERE user_id = '".$_SESSION["user_id"]."'
 		";
 	}

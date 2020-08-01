@@ -3,7 +3,7 @@
 
 include('database_connection.php');
 
-if(!isset($_SESSION['type']))
+if(!isset($_SESSION['user_id']))
 {
 	header("location:login.php");
 }
@@ -20,8 +20,8 @@ $email = '';
 $user_id = '';
 foreach($result as $row)
 {
-	$name = $row['user_name'];
-	$email = $row['user_email'];
+	$name = $row['name'];
+	$email = $row['email'];
 }
 
 include('header.php');

@@ -6,10 +6,10 @@
 	<head>
 		<title>DMCE IT Placement</title>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>	
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
-	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script> -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">	
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
 
 		<!-- <script src="js/jquery-1.10.2.min.js"></script> -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -28,22 +28,12 @@
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<a href="index.php" class="navbar-brand">Home</a>
-						<!-- <a href="../../DMCE-placement/Final_Static.php" class="navbar-brand">Home</a> -->
 
 					</div>
 					<ul class="nav navbar-nav">
-					<?php
-					if($_SESSION['type'] == 'master')
-					{
-					?>
 						<li><a href="user.php">User</a></li>
-<!-- 						<li><a href="category.php">Category</a></li>
-						<li><a href="brand.php">Brand</a></li>
-						<li><a href="product.php">Product</a></li> -->
-					<?php
-					}
-					?>
 						<li><a href="offer.php">Offer</a></li>
+						<li><a href="web_admin.php">Web Admin</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">

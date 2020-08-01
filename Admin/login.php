@@ -3,7 +3,7 @@
 
 include('database_connection.php');
 
-if(isset($_SESSION['type']))
+if(isset($_SESSION['user_id']))
 {
 	header("location:index.php");
 }
@@ -14,12 +14,12 @@ if(isset($_POST["login"]))
 {
 	$query = "
 	SELECT * FROM user_details 
-		WHERE user_email = :user_email
+		WHERE email = :email
 	";
 	$statement = $connect->prepare($query);
 	$statement->execute(
 		array(
-				'user_email'	=>	$_POST["user_email"]
+				'email'	=>	$_POST["email"]
 			)
 	);
 	$count = $statement->rowCount();
@@ -28,25 +28,16 @@ if(isset($_POST["login"]))
 		$result = $statement->fetchAll();
 		foreach($result as $row)
 		{
-			if($row['user_status'] == 'Active')
-			{
-				if(password_verify($_POST["user_password"], $row["user_password"]))
+			if(password_verify($_POST["password"], $row["password"]))
 				{
-				
-					$_SESSION['type'] = $row['user_type'];
 					$_SESSION['user_id'] = $row['user_id'];
-					$_SESSION['user_name'] = $row['user_name'];
+					$_SESSION['user_name'] = $row['name'];
 					header("location:index.php");
 				}
 				else
 				{
 					$message = "<label>Wrong Password</label>";
 				}
-			}
-			else
-			{
-				$message = "<label>Your account is disabled, Contact Master</label>";
-			}
 		}
 	}
 	else
@@ -77,11 +68,11 @@ if(isset($_POST["login"]))
 						<?php echo $message; ?>
 						<div class="form-group">
 							<label>User Email</label>
-							<input type="text" name="user_email" class="form-control" required />
+							<input type="text" name="email" class="form-control" required />
 						</div>
 						<div class="form-group">
 							<label>Password</label>
-							<input type="password" name="user_password" class="form-control" required />
+							<input type="password" name="password" class="form-control" required />
 						</div>
 						<div class="form-group">
 							<input type="submit" name="login" value="Login" class="btn btn-info" />
